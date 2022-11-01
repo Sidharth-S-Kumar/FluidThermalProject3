@@ -16,11 +16,8 @@ A1 = (pi*D1^2)/4;
 A2 = (pi*D2^2)/4 ;
 Q1= Qtot*(A1/(A1+A2));
 Qtotnew = 0; 
-count = 0;
-%Qtotnew<=.999*Qtot||Qtotnew>=1.001*Qtot
-while(Qtotnew<=.9999*Qtot||Qtotnew>=1.0001*Qtot)
+while(Qtotnew<=.99*Qtot||Qtotnew>=1.01*Qtot)
 %Flow Rate initial assumption 
-count = count +1; 
 Q2 = Qtot-Q1; 
 
 V1 = Q1/A1;
@@ -38,8 +35,8 @@ V2 = (2*p*rho^-1*((f2*L2*D2^-1)+K2)^-1)^.5;
 
 Q2 = A2*V2;
 Qtotnew = Q1+Q2;
-if(Qtotnew<=.9999*Qtot||Qtotnew>=1.0001*Qtot)
-    Q1= (Q1/Qtotnew)*Qtot;
+if(Qtotnew<=.99*Qtot||Qtotnew>=1.01*Qtot)
 end
+Q1= (Q1/Qtotnew)*Qtot;
 end 
 Pa = Pb + p; 
